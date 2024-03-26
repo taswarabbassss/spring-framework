@@ -15,11 +15,9 @@ public class PizzaController {
     // @Resource
     public Pizza pizza;
 
-//    public PizzaController(@Qualifier("vegPizza") Pizza pizza) {
-//        this.pizza = pizza;
-//    }
-
-
+    // public PizzaController(@Qualifier("vegPizza") Pizza pizza) {
+    // this.pizza = pizza;
+    // }
 
     public PizzaController(Pizza pizza) {
         this.pizza = pizza;
@@ -29,4 +27,10 @@ public class PizzaController {
         return pizza.getPizza();
     }
 
+    public void init() {
+        System.out.println("PizzaController Initilized");
+    }
+    public void destroy() {
+        System.out.println("PizzaController Destroyed");
+    }
 }

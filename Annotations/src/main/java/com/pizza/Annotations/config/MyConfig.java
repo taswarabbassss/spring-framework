@@ -21,7 +21,7 @@ public class MyConfig {
         return new ChickenPizza();
     }
 
-    @Bean
+    @Bean(initMethod = "init", destroyMethod = "destroy")
     public PizzaController pizzaController(){
         return new PizzaController(vegPizzaa());
     }
