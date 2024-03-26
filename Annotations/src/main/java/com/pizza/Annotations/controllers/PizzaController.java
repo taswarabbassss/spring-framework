@@ -7,11 +7,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
-@Component
+// @Component
 
+// @RequiredArgsConstructor
 public class PizzaController {
 
-    @Resource
+    // @Resource
     public Pizza pizza;
 
 //    public PizzaController(@Qualifier("vegPizza") Pizza pizza) {
@@ -19,7 +20,13 @@ public class PizzaController {
 //    }
 
 
+
+    public PizzaController(Pizza pizza) {
+        this.pizza = pizza;
+    }
+
     public String getPizza() {
         return pizza.getPizza();
     }
+
 }

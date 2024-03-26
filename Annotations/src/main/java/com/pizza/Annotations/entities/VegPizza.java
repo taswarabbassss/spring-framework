@@ -1,8 +1,8 @@
-package com.pizza.Annotations.controllers.entities;
+package com.pizza.Annotations.entities;
 
 import org.springframework.stereotype.Component;
 
-// @Component
+@Component
 public class VegPizza implements Pizza{
     @Override
     public String getPizza() {
