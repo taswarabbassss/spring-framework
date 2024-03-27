@@ -3,6 +3,7 @@ package com.pizza.Annotations;
 import com.pizza.Annotations.Lazy.LazyLoader;
 import com.pizza.Annotations.Scope.Prototype;
 import com.pizza.Annotations.Scope.Singleton;
+import com.pizza.Annotations.Value.ValueAnnotation;
 import com.pizza.Annotations.controllers.PizzaController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +19,13 @@ public class AnnotationsApplication {
         // testPizzaController( context);
         // testLazy(context);
         // testScope(context);
+        testValueDefaultValueAssignment(context);
+
         
+    }
+    public static void testValueDefaultValueAssignment(ConfigurableApplicationContext context) {
+        ValueAnnotation valueAnnotation = context.getBean(ValueAnnotation.class);
+        System.out.println(valueAnnotation.getFullName());
         
     }
 
