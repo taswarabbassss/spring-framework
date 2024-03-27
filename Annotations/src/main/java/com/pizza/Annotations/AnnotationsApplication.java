@@ -19,8 +19,20 @@ public class AnnotationsApplication {
         // testPizzaController( context);
         // testLazy(context);
         // testScope(context);
-        testValueDefaultValueAssignment(context);
+        // testValueDefaultValueAssignment(context);
+        testValueToReadValuesFromApplicationDotPropertiesFile(context);
 
+
+        
+    }
+    public static void testValueToReadValuesFromApplicationDotPropertiesFile(ConfigurableApplicationContext context) {
+        ValueAnnotation valueAnnotation = context.getBean(ValueAnnotation.class);
+        System.out.println("APP NAME:"+valueAnnotation.getApplicationName());
+        System.out.println("APP PORT:"+valueAnnotation.getPort());
+        System.out.println("HOST:"+valueAnnotation.getHost());
+        System.out.println("USER:"+valueAnnotation.getUser());
+        System.out.println("EMAIL:"+valueAnnotation.getEmail());
+        System.out.println("PASSWORD:"+valueAnnotation.getPassword());
         
     }
     public static void testValueDefaultValueAssignment(ConfigurableApplicationContext context) {
