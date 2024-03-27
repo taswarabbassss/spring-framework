@@ -13,6 +13,7 @@ import com.pizza.Annotations.controllers.entities.Book;
 import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,4 +49,9 @@ public class BookController {
         return book;
     }
 
+    @DeleteMapping("/books/{id}")
+    public String deletBook(@PathVariable int id) {
+        System.out.println(id);
+        return "book deleted successfully...";
+    }
 }
