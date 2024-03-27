@@ -1,5 +1,6 @@
 package com.pizza.Annotations;
 
+import com.pizza.Annotations.Lazy.LazyLoader;
 import com.pizza.Annotations.controllers.PizzaController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,11 +14,13 @@ public class AnnotationsApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext app = SpringApplication.run(AnnotationsApplication.class, args);
 
-        PizzaController pizzaController = (PizzaController) app.getBean("pizzaController");
+        // PizzaController pizzaController = (PizzaController) app.getBean("pizzaController");
 
-        System.out.println("PIZZA: " + pizzaController.getPizza());
+        // System.out.println("PIZZA: " + pizzaController.getPizza());
 
-        System.out.println("Annotation app is running....");
+        // System.out.println("Annotation app is running....");
+
+      LazyLoader lazyLoader =   app.getBean(LazyLoader.class);
     }
 
 }
