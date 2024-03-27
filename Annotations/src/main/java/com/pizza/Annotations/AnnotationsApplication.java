@@ -1,10 +1,14 @@
 package com.pizza.Annotations;
 
 import com.pizza.Annotations.Lazy.LazyLoader;
+import com.pizza.Annotations.PropertySource.PropertySourceReader;
 import com.pizza.Annotations.Scope.Prototype;
 import com.pizza.Annotations.Scope.Singleton;
 import com.pizza.Annotations.Value.ValueAnnotation;
 import com.pizza.Annotations.controllers.PizzaController;
+
+import lombok.Value;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -21,10 +25,19 @@ public class AnnotationsApplication {
         // testScope(context);
         // testValueDefaultValueAssignment(context);
         // testValueToReadValuesFromApplicationDotPropertiesFile(context);
-        testValueToReadValuesOfSystemEnvironementVariables(context);
+        // testValueToReadValuesOfSystemEnvironementVariables(context);
+        testPropertySourceReader(context);
+        
 
 
         
+    }
+    public static void testPropertySourceReader(ConfigurableApplicationContext context) {
+        PropertySourceReader PropertySourceReader = context.getBean(PropertySourceReader.class);
+
+        System.out.println("HOST: "+ PropertySourceReader.getHost());
+        System.out.println("EMAIL: "+ PropertySourceReader.getEmail());
+        System.out.println("PASS: "+ PropertySourceReader.getPassword());
     }
 
     public static void testValueToReadValuesOfSystemEnvironementVariables(ConfigurableApplicationContext context) {
