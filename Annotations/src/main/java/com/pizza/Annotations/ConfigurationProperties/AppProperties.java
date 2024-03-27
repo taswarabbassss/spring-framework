@@ -1,6 +1,8 @@
 package com.pizza.Annotations.ConfigurationProperties;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -51,6 +53,15 @@ public class AppProperties {
         private String password;
         private List<String> roles;
         private boolean enabled;
+        Map<String, String> permissions = new HashMap<>();
+
+        public Map<String, String> getPermissions() {
+            return permissions;
+        }
+
+        public void setPermissions(Map<String, String> permissions) {
+            this.permissions = permissions;
+        }
 
         public String getUsername() {
             return username;
