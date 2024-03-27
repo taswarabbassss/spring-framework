@@ -1,5 +1,6 @@
 package com.pizza.Annotations.controllers;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/api")
 public class BookController {
     
-    @RequestMapping(value = {"/book","/java","/core"}, method=RequestMethod.GET)
+    @RequestMapping(value = {"/book","/java","/core"}, method=RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}, consumes  = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Book getBook(HttpServletRequest request) {
-        String url =  request.getRequestURL().toString();
-        System.out.println("URL: "+ url);
+
         return new Book(1, "Java-Core", "Tasawar");
     }
     
