@@ -3,6 +3,7 @@ package com.pizza.Annotations.controllers;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 
@@ -28,6 +30,7 @@ public class BookController {
     }
 
     @GetMapping(value = {"/person", "/employee"})
+    @ResponseStatus(value = HttpStatus.CREATED)
     public Map<String,String> getPerson(@RequestParam("name") String param) {
         Map<String,String> result = new LinkedHashMap<>();
         result.put("name", param);
