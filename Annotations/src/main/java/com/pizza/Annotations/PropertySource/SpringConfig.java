@@ -5,6 +5,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @PropertySource("classpath:mail.properties")
+@PropertySource("classpath:message.properties")
 public class SpringConfig {
     
 }

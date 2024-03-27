@@ -12,6 +12,18 @@ public class PropertySourceReader {
     private String email;
     @Value("${gmail.password}")
     private String password;
+
+    @Value("${app.name}")
+    private String appName;
+    @Value("${app.description}")
+    private String appDescription;
+
+    public String getAppName() {
+        return appName;
+    }
+    public String getAppDescription() {
+        return appDescription;
+    }
     public String getHost() {
         return host;
     }

@@ -35,9 +35,13 @@ public class AnnotationsApplication {
     public static void testPropertySourceReader(ConfigurableApplicationContext context) {
         PropertySourceReader PropertySourceReader = context.getBean(PropertySourceReader.class);
 
+        System.out.println("_______MAIL.PROPERTIES VALUES______________");
         System.out.println("HOST: "+ PropertySourceReader.getHost());
         System.out.println("EMAIL: "+ PropertySourceReader.getEmail());
         System.out.println("PASS: "+ PropertySourceReader.getPassword());
+        System.out.println("_______MESSAGE.PROPERTIES VALUES______________");
+        System.out.println("APP NAME: "+ PropertySourceReader.getAppName());
+        System.out.println("APP DESC: "+ PropertySourceReader.getAppDescription());
     }
 
     public static void testValueToReadValuesOfSystemEnvironementVariables(ConfigurableApplicationContext context) {
