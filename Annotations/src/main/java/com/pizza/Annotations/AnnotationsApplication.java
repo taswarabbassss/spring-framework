@@ -15,6 +15,14 @@ public class AnnotationsApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(AnnotationsApplication.class, args);
+        // testPizzaController( context);
+        // testLazy(context);
+        // testScope(context);
+        
+        
+    }
+
+    public static void testScope(ConfigurableApplicationContext context){
         Singleton singleton1 =  context.getBean(Singleton.class);
         System.out.println(singleton1.hashCode());
         Singleton singleton2 =  context.getBean(Singleton.class);
@@ -28,7 +36,16 @@ public class AnnotationsApplication {
         System.out.println(prototype2.hashCode());
         Prototype prototype3   = context.getBean(Prototype.class);
         System.out.println(prototype3.hashCode());
-        
+    }
+    public static void testLazy( ConfigurableApplicationContext context){
+
+      LazyLoader lazyLoader =   context.getBean(LazyLoader.class);
+    }
+    public static void testPizzaController(ConfigurableApplicationContext context) {
+                
+        PizzaController pizzaController = (PizzaController) app.getBean("pizzaController");
+
+        System.out.println("PIZZA: " + pizzaController.getPizza());
     }
 
 }
