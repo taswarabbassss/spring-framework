@@ -16,7 +16,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class AnnotationsApplication {
-
+    
     public  static PizzaController pizzaController;
 
     public static void main(String[] args) {
@@ -28,11 +28,10 @@ public class AnnotationsApplication {
         // testValueToReadValuesFromApplicationDotPropertiesFile(context);
         // testValueToReadValuesOfSystemEnvironementVariables(context);
         // testPropertySourceReader(context);
-        testEnvironmentClassReaderToReadCustomPropertiesValues(context);
-        
+        // testEnvironmentClassReaderToReadCustomPropertiesValues(context);
 
 
-        
+        System.out.println("Annotation app is running at port: ");
     }
     public static void testEnvironmentClassReaderToReadCustomPropertiesValues(ConfigurableApplicationContext context) {
         EnvironmentClassReader environmentClassReader = context.getBean(EnvironmentClassReader.class);
