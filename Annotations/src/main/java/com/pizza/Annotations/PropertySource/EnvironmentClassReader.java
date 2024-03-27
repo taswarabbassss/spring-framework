@@ -1,0 +1,42 @@
+package com.pizza.Annotations.PropertySource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
+
+@Component
+public class EnvironmentClassReader {
+    
+    @Autowired
+    private Environment environment;
+
+    @Value("${gmail.host}")
+    private String host;
+    @Value("${gmail.email}")
+    private String email;
+    @Value("${gmail.password}")
+    private String password;
+    
+    @Value("${app.name}")
+    private String appName;
+    @Value("${app.description}")
+    private String appDescription;
+    
+    public String getAppName() {
+        return environment.getProperty("app.name");
+    }
+    public String getAppDescription() {
+        return environment.getProperty("app.description");
+        
+    }
+    public String getHost() {
+        return environment.getProperty("gmail.host");
+    }
+    public String getEmail() {
+        return environment.getProperty("gmail.email");
+    }
+    public String getPassword() {
+        return environment.getProperty("gmail.password");
+    }
+}

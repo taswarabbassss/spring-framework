@@ -1,6 +1,7 @@
 package com.pizza.Annotations;
 
 import com.pizza.Annotations.Lazy.LazyLoader;
+import com.pizza.Annotations.PropertySource.EnvironmentClassReader;
 import com.pizza.Annotations.PropertySource.PropertySourceReader;
 import com.pizza.Annotations.Scope.Prototype;
 import com.pizza.Annotations.Scope.Singleton;
@@ -26,12 +27,23 @@ public class AnnotationsApplication {
         // testValueDefaultValueAssignment(context);
         // testValueToReadValuesFromApplicationDotPropertiesFile(context);
         // testValueToReadValuesOfSystemEnvironementVariables(context);
-        testPropertySourceReader(context);
+        // testPropertySourceReader(context);
+        testEnvironmentClassReaderToReadCustomPropertiesValues(context);
         
 
 
         
     }
+    public static void testEnvironmentClassReaderToReadCustomPropertiesValues(ConfigurableApplicationContext context) {
+        EnvironmentClassReader environmentClassReader = context.getBean(EnvironmentClassReader.class);
+    
+        System.out.println("_______MAIL.PROPERTIES VALUES______________");
+        System.out.println("HOST: "+ environmentClassReader.getHost());
+        System.out.println("EMAIL: "+ environmentClassReader.getEmail());
+        System.out.println("PASS: "+ environmentClassReader.getPassword());
+        System.out.println("_______MESSAGE.PROPERTIES VALUES______________");
+        System.out.println("APP NAME: "+ environmentClassReader.getAppName());
+        System.out.println("APP DESC: "+ environmentClassReader.getAppDescription());}
     public static void testPropertySourceReader(ConfigurableApplicationContext context) {
         PropertySourceReader PropertySourceReader = context.getBean(PropertySourceReader.class);
 
