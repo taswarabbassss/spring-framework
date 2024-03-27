@@ -32,7 +32,7 @@ public class AnnotationsApplication {
         // testEnvironmentClassReaderToReadCustomPropertiesValues(context);
         testConfiurationPropertiesDemo(context);
 
-        System.out.println("Annotation app is running at port: ");
+        // System.out.println("Annotation app is running at port: ");
     }
 
     public static void testConfiurationPropertiesDemo(ConfigurableApplicationContext context) {

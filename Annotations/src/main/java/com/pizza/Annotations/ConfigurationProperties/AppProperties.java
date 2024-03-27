@@ -1,5 +1,7 @@
 package com.pizza.Annotations.ConfigurationProperties;
 
+import java.util.List;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +12,15 @@ public class AppProperties {
     private String name;
     private String description;
     private String uploadDir;
+    private Security security = new Security();
+
+    public Security getSecurity() {
+        return security;
+    }
+
+    public void setSecurity(Security security) {
+        this.security = security;
+    }
 
     public String getName() {
         return name;
@@ -33,6 +44,46 @@ public class AppProperties {
 
     public void setUploadDir(String uploadDir) {
         this.uploadDir = uploadDir;
+    }
+
+    public static class Security {
+        private String username;
+        private String password;
+        private List<String> roles;
+        private boolean enabled;
+
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
+
+        public List<String> getRoles() {
+            return roles;
+        }
+
+        public void setRoles(List<String> roles) {
+            this.roles = roles;
+        }
+
+        public boolean isEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(boolean enabled) {
+            this.enabled = enabled;
+        }
+
     }
 
 }
