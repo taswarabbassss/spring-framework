@@ -28,8 +28,24 @@ public class ValueAnnotation {
     @Value("${mail.password}")
     private String password;
 
+    @Value("${TMP}")
+    private String TMP;
+    @Value("${TEMP}")
+    private String TEMP;
 
     
+    public String getTMP() {
+        return TMP;
+    }
+
+
+
+    public String getTEMP() {
+        return TEMP;
+    }
+
+
+
     public ValueAnnotation(){
         System.out.println("..ValueAnnotation...");
     }

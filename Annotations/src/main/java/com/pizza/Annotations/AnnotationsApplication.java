@@ -20,10 +20,22 @@ public class AnnotationsApplication {
         // testLazy(context);
         // testScope(context);
         // testValueDefaultValueAssignment(context);
-        testValueToReadValuesFromApplicationDotPropertiesFile(context);
+        // testValueToReadValuesFromApplicationDotPropertiesFile(context);
+        testValueToReadValuesOfSystemEnvironementVariables(context);
 
 
         
+    }
+
+    public static void testValueToReadValuesOfSystemEnvironementVariables(ConfigurableApplicationContext context) {
+        ValueAnnotation valueAnnotation = context.getBean(ValueAnnotation.class);
+        // TO GET ENVIRONMENT VARIABLES WITH SYSTEM CLASS
+        String myEnv = System.getenv("TEMP");
+        System.out.println("MY ENV: "+ myEnv);
+        // TO GET ENVIRONMENT VARIABLES WITH @Value Annotation
+
+        System.out.println("TMP :"+valueAnnotation.getTMP());
+        System.out.println("TEMP :"+valueAnnotation.getTEMP());
     }
     public static void testValueToReadValuesFromApplicationDotPropertiesFile(ConfigurableApplicationContext context) {
         ValueAnnotation valueAnnotation = context.getBean(ValueAnnotation.class);
