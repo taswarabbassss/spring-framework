@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.Key;
 import java.util.Base64;
+import java.util.function.Function;
 
 @Service
 public class JwtService {
@@ -18,6 +19,10 @@ public class JwtService {
         return null;
     }
 
+    public <T> T extractSingleClaim(String token, Function<Claims,T> claimsResolver){
+        final Claims claims = extractAllClaims(token);
+        return claimsResolver.apply(claims);
+    }
     private Claims extractAllClaims(String token){
 
         return Jwts
