@@ -16,7 +16,7 @@ public class JwtService {
     //node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
     private static final String SECRET_KEY = "3ccc9dcd5a13eb36e53395cb7f62fa389a892acc42a365a209c5c8b20196bf99";
     public String extractUsername(String token) {
-        return null;
+        return extractSingleClaim(token,Claims::getSubject);
     }
 
     public <T> T extractSingleClaim(String token, Function<Claims,T> claimsResolver){
