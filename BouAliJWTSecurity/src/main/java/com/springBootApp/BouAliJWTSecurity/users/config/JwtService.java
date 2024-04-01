@@ -1,4 +1,4 @@
-package com.springBootApp.BouAliJWTSecurity.users.authenticators;
+package com.springBootApp.BouAliJWTSecurity.users.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
