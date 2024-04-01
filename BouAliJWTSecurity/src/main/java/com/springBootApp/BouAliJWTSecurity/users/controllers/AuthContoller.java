@@ -1,5 +1,6 @@
 package com.springBootApp.BouAliJWTSecurity.users.controllers;
 
+import com.springBootApp.BouAliJWTSecurity.users.entities.AuthenticationRequest;
 import com.springBootApp.BouAliJWTSecurity.users.entities.AuthenticationResponse;
 import com.springBootApp.BouAliJWTSecurity.users.entities.RegisterRequest;
 import lombok.RequiredArgsConstructor;
