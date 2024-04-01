@@ -1,5 +1,6 @@
 package com.springBootApp.BouAliJWTSecurity.users.controllers;
 
+import com.springBootApp.BouAliJWTSecurity.users.entities.AuthenticationResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
